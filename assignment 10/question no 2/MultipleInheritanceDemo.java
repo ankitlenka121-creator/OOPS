@@ -1,0 +1,30 @@
+interface A {
+    default void show() {
+        System.out.println("Default method from Interface A");
+    }
+}
+
+interface B {
+    default void show() {
+        System.out.println("Default method from Interface B");
+    }
+}
+
+class C implements A, B {
+    
+    public void show() {
+        A.super.show();
+        B.super.show();
+        System.out.println("Method from Class C");
+    }
+}
+
+public class MultipleInheritanceDemo {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.show();
+    }
+}
+//Most frequent character: s
+//Second most frequent character: c
+//Frequency: 2
